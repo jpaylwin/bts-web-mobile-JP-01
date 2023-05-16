@@ -2,52 +2,74 @@
 <head>
     <title>BTS Website</title> 
     <script>
-        function getRandomNumber(minNumber,maxNumber){
-            return Math.floor(math.random()*(maxNumber - minNumber + 1)+ minNumber)
-        }
+       
+        function getRandomNumber(minNumber, maxNumber) {
+				let something = 0
+				return Math.floor( Math.random() * (maxNumber - minNumber + 1) + minNumber)
+			}
 
-        let times = 5
-        let counter = 1
+        let userPoints = 0
+        let computerPoints = 0
+        let i = 0
         // This is a comment
          //const variable never change
          let rock = 1
          let paper = 2
          let scissors = 3
-
-         //selection
-         let player = prompt("Choose 1 for rock, 2 for paper, 3 for scissors")
          const min = 1
          const max = 3
+         const times = 3
+
+         //selection
+        while (i < times){
+         let player = prompt("Choose 1 for rock, 2 for paper, 3 for scissors")
          let computer = getRandomNumber(min,max)
 
-         if(player == 1){
-            alert("You chose rock")
-         }
-         else if(player == 2){
-            alert("You chose paper")
-         }
-         else if(player == 3){
-            alert("You chose scissor")
-         }
-         else {
-            alert("You lost")
+         
+            if(player == 1){
+                alert("You chose rock")
+            }
+            else if(player == 2){
+                alert("You chose paper")
+            }
+            else if(player == 3){
+                alert("You chose scissor")
+            }
+            else {
+                alert("You lost")
+            }
+
+            //Ver quien gana
+            if (player = 1 && computer == 3){
+                alert("You won with rock")
+                userPoints = userPoints + 1
+            }
+            else if (player = 2 && computer == 1){
+                alert("You won with paper")
+                userPoints = userPoints + 1
+            }
+            else if (player = 3 && computer == 2){
+                alert("You won with scissors")
+                userPoints = userPoints + 1
+            }
+            else{
+                alert("You lost with " + player)
+                computerPoints = computerPoints + 1
+            }
+
+            //while para terminar
+            i = i + 1
          }
 
          //play and conditions
-         if(player == computer){
+         if(userPoints == computerPoints){
             alert("It's a tie")
          }
-         else if (player = 1 && computer == 3){
-            alert("You won with rock")
-         }
-         else if (player = 2 && computer == 1){
-            alert("You won with paper")
-         }
-         else if (player = 3 && computer == 2){
-            alert("You won with scissors")
+         else if (userPoints > computerPoints){
+            alert("You won after " + i + " games!")
          }
          else{
-            alert("You're a loser. Lost with " + player)
+            alert("You're a loser. You lost after" + i + " games")
          }
 
     </script>
