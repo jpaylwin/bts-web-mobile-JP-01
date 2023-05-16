@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Nathan Website</title> 
+    <script>
+       
+       function waterDrinks(hoursCycling){
+        let something = 0
+        return Math.round(hoursCycling*0.5)
+       }
+
+       function yearsReach(yearsOld){
+        let something = ""
+        let i = 1
+        while(i <= yearsOld){
+            something = something + i + ","
+            i = i + 1
+        }
+        return something
+       }
+
+       function capitalObatined(amount,interest,years){
+        let aux = ""
+        let auxCapital = amount
+        let i = 1
+        while(i <= years){
+            if(i == years){
+                auxCapital = auxCapital * (1+ interest/100)
+                aux = aux + "Principal after " + years + " years: " + auxCapital + "€"
+                i = i+1
+            }
+
+            else {
+                auxCapital = auxCapital * (1+ interest/100)
+                aux = aux + "Capital after " + i + " years: " + auxCapital + "€,"
+                i = i+1
+            }
+        }
+        return aux
+       }
+
+
+
+       let message = prompt("How old are you?")
+       let years = yearsReach(message)
+       alert(years)
+
+       let messageCapital = prompt("Amount of investment")
+       let messageyears = prompt("How many years")
+       let messageinterest = prompt("Interest rate in %")
+       let capitaltotal = capitalObatined(messageCapital,messageinterest,messageyears)
+       alert(capitaltotal)
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Page</h1>
+    <p>Page content goes here</p>
+
+</body>
+</html>
