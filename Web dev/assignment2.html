@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Nathan Website</title> 
+    <script>
+
+     
+    // Number 1
+
+        function positiveNumbers(arr){
+
+        let sum = 0;
+
+        arr.forEach(element => {
+             if(element > 0){
+
+                sum = sum + element
+                console.log(element)
+            }        
+    
+        });
+        let result = sum
+        return result;
+}
+    console.log(positiveNumbers([2,3,4,5]));
+
+
+    //Number 2
+    function calcAverage(arr) {
+        let sum = 0;
+        arr.forEach(element =>{
+            sum = sum + element
+
+        })
+        const average = Math.floor(sum / arr.length);
+        return average;
+        }
+        
+    console.log(calcAverage([5,4,6,7]))
+
+    //Number 3
+
+    function checkIfContains(arr, value) {
+        return arr.includes(value);
+        }
+    
+    console.log(checkIfContains([2,3,4,5,6],3))
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Page</h1>
+    <p>Page content goes here</p>
+
+</body>
+</html>
